@@ -21,14 +21,25 @@
 
 @implementation ViewController
 
-
+- (NSString*)SDK
+{
+    NSLog(@"Calling SDK()");
+    SDKManager *controller = [[SDKManager alloc]init];
+    NSString *emessage = [controller tester];
+    NSLog(@"Return of SDK(): ");
+    NSLog(emessage);
+    return emessage;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
    
-    SDKManager *controller = [[SDKManager alloc]init];
+//    SDKManager *controller = [[SDKManager alloc]init];
+//    NSString *emessage = [controller tester];
+//    NSLog(emessage);
+    
 //    NSString *string = [controller a];
 //    NSLog(@"%@", string);
 //    
@@ -36,10 +47,10 @@
 //    NSString *kw = @"Swift";
     
     //let emessage =   encrypt(text: String, keyword: String) -> String
-    NSString *emessage = [controller tester];
-
     
-    NSLog(emessage);
+    
+    [self SDK];
+    
     //print(emessage) //5811X:PXU19
     
     //let dmessage = decrypt(text: emessage, keyword: kw)
