@@ -29,8 +29,21 @@
     // Do any additional setup after loading the view, typically from a nib.
    
     SDKManager *controller = [[SDKManager alloc]init];
-    NSString *string = [controller a];
-    NSLog(@"%@", string);
+//    NSString *string = [controller a];
+//    NSLog(@"%@", string);
+//    
+//    NSString *test = @"Hello World";
+//    NSString *kw = @"Swift";
+    
+    //let emessage =   encrypt(text: String, keyword: String) -> String
+    NSString *emessage = [controller tester];
+
+    
+    NSLog(emessage);
+    //print(emessage) //5811X:PXU19
+    
+    //let dmessage = decrypt(text: emessage, keyword: kw)
+    //print(dmessage) //hello world
 }
 
 @end

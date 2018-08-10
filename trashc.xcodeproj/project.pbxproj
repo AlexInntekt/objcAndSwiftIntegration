@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07475649287424182839A6C2 /* Pods-trashc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trashc.release.xcconfig"; path = "Pods/Target Support Files/Pods-trashc/Pods-trashc.release.xcconfig"; sourceTree = "<group>"; };
+		79D79A7B05462560BFEB8707 /* Pods-trashc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trashc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trashc/Pods-trashc.debug.xcconfig"; sourceTree = "<group>"; };
 		B2E7305A211DC7A1001D095B /* trashc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trashc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E7305D211DC7A1001D095B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2E7305E211DC7A1001D095B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +92,8 @@
 				B2E73080211DC7A2001D095B /* trashcUITests */,
 				B2E7305B211DC7A1001D095B /* Products */,
 				B2E7308F211DDF1B001D095B /* trashc-Bridging-Header.h */,
+				DB9B6806EEE580CE19318C75 /* Pods */,
+				FA6EC854097A6FCD8C52E4ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +141,22 @@
 			path = trashcUITests;
 			sourceTree = "<group>";
 		};
+		DB9B6806EEE580CE19318C75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79D79A7B05462560BFEB8707 /* Pods-trashc.debug.xcconfig */,
+				07475649287424182839A6C2 /* Pods-trashc.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA6EC854097A6FCD8C52E4ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2E73086211DC7A2001D095B /* Build configuration list for PBXNativeTarget "trashc" */;
 			buildPhases = (
+				552601C7FADBEA30D0593ED8 /* [CP] Check Pods Manifest.lock */,
 				B2E73056211DC7A1001D095B /* Sources */,
 				B2E73057211DC7A1001D095B /* Frameworks */,
 				B2E73058211DC7A1001D095B /* Resources */,
@@ -263,6 +284,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		552601C7FADBEA30D0593ED8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trashc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B2E73056211DC7A1001D095B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -329,7 +371,7 @@
 		B2E73084211DC7A2001D095B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -388,7 +430,7 @@
 		B2E73085211DC7A2001D095B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -440,8 +482,9 @@
 		};
 		B2E73087211DC7A2001D095B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79D79A7B05462560BFEB8707 /* Pods-trashc.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -462,8 +505,9 @@
 		};
 		B2E73088211DC7A2001D095B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07475649287424182839A6C2 /* Pods-trashc.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
