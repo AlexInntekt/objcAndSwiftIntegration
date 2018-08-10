@@ -10,23 +10,25 @@ import Foundation
 
 @objc class SDKManager: NSObject
 {
-    let alphabetList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4","5", "6", "7", "8", "9", "0", "-", "."]
+    let alphabetList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "Q", "P", "R", "S", "T", "U", "V", "Y", "X", "Z" , "W", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4","5", "6", "7", "8", "9", "0", "-", ".", "!", ",", ";", ""]
     
     func a() -> String
     {
-        
         return "hello from SDKManager"
     }
     
-    func uniquekey(keyword: String) -> String {
+    func uniquekey(keyword: String) -> String
+    {
         var string = String()
-        for character in keyword {
-            if !string.contains(String(character)) {
+        for character in keyword
+        {
+            if !string.contains(String(character))
+            {
                 string.append(character)
             }
         }
         
-        return string.lowercased()
+        return string//.lowercased()
     }
 
     func reversed(alphabet: [String]) -> [String] {
@@ -77,13 +79,13 @@ import Foundation
     
     func tester() -> String
     {
-        let encryptedString = encrypt(text: "hello world!", keyword: "parola")
+        let encryptedString = encrypt(text: "Hello dear World!", keyword: "parola")
         let result = decrypt(text: encryptedString,  keyword: "parola")
         return result
     }
     
     func encrypt(text: String, keyword: String) -> String {
-        let text = text.lowercased()
+        //let text = text.lowercased()
         let key = uniquekey(keyword: keyword)
         let alphabet = shiftAlphabetList(key: key)
         let map = mapMessage(reversed: alphabet).encryption
@@ -97,12 +99,12 @@ import Foundation
                 encrypted.append(string)
             }
         }
-        return encrypted.uppercased()
+        return encrypted//.uppercased()
     }
     
     
     func decrypt(text: String, keyword: String) -> String {
-        let text = text.lowercased()
+        //let text = text.lowercased()
         let key = uniquekey(keyword: keyword)
         let alphabet = shiftAlphabetList(key: key)
         let map = mapMessage(reversed: alphabet).decryption
